@@ -5,7 +5,7 @@ import 'package:proyecto_bases_final_consuelo/app/routes/app_pages.dart';
 class LoginController extends GetxController {
   final ScrollController horizontalScroll = ScrollController();
   final ScrollController verticalScroll = ScrollController();
-  TextEditingController emailController = TextEditingController();
+  TextEditingController userNameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   final formKeyLogin = GlobalKey<FormState>();
   RxBool isLoading = false.obs;

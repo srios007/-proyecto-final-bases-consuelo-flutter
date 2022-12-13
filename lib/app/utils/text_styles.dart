@@ -23,6 +23,12 @@ class Styles {
     fontSize: 18,
     fontWeight: FontWeight.bold,
   );
+  final labelStyle = GoogleFonts.poppins(
+    textStyle: const TextStyle(
+      color: Palette.darkBlue,
+      fontSize: 18,
+    ),
+  );
 
   final tabBarTextStyle = GoogleFonts.poppins(
     textStyle: const TextStyle(

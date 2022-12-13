@@ -12,6 +12,7 @@ dependencies:
   google_fonts: ^3.0.1
   adaptive_scrollbar: ^2.1.2
   intl: ^0.17.0
+  dropdown_search: ^5.0.2
 
 
   flutter: 

@@ -55,7 +55,7 @@ class LoginView extends GetView<LoginController> {
                       padding: const EdgeInsets.symmetric(horizontal: 80),
                       child: CustomInput(
                         hintText: 'Usuario de oracle',
-                        controller: controller.emailController,
+                        controller: controller.userNameController,
                       ),
                     ),
                     const SizedBox(height: 20),

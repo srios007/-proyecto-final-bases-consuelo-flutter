@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -29,61 +30,39 @@ class GreenButton extends StatelessWidget {
   Widget build(BuildContext context) {
     iconStart ??= false;
     return Obx(
-      () => SizedBox(
-        width: width ?? Get.width * 0.31,
-        height: height ?? 90,
-        child: MaterialButton(
-          color: color ?? Palette.green,
-          elevation: 1,
-          onPressed: isLoading.value ? () {} : onPressed,
+      () => CupertinoButton(
+        onPressed: isLoading.value ? () {} : onPressed,
+        child: Container(
+          width: width ?? Get.width * 0.31,
+          height: height ?? 90,
+          decoration: BoxDecoration(
+            color: color ?? Palette.green,
+            borderRadius: BorderRadius.circular(20),
+          ),
           child: isLoading.value
-              ? const SizedBox(
-                  height: 20,
-                  width: 20,
-                  child: Center(
-                    child: CircularProgressIndicator(
-                      color: Palette.white,
+              ? const Center(
+                  child: SizedBox(
+                    height: 20,
+                    width: 20,
+                    child: Center(
+                      child: CircularProgressIndicator(
+                        color: Palette.white,
+                      ),
                     ),
                   ),
                 )
-              : icon != null
-                  ? Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        iconStart! ? icon! : const SizedBox(),
-                        iconStart!
-                            ? const SizedBox(
-                                width: 8,
-                              )
-                            : const SizedBox(),
-                        Center(
-                          child: Text(
-                            buttonText ?? 'Continuar',
-                            style: const TextStyle(
-                              color: Palette.white,
-                              fontSize: 18,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                        iconStart! == false
-                            ? const SizedBox(
-                                width: 8,
-                              )
-                            : const SizedBox(),
-                        iconStart! == false ? icon! : const SizedBox(),
-                      ],
-                    )
-                  : Text(
-                      buttonText ?? 'Continuar',
-                      style: GoogleFonts.poppins(
-                        textStyle: const TextStyle(
-                          color: Palette.darkBlue,
-                          fontSize: 34,
-                          fontWeight: FontWeight.bold,
-                        ),
+              : Center(
+                  child: Text(
+                    buttonText ?? 'Continuar',
+                    style: GoogleFonts.poppins(
+                      textStyle: const TextStyle(
+                        color: Palette.darkBlue,
+                        fontSize: 34,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
+                  ),
+                ),
         ),
       ),
     );
