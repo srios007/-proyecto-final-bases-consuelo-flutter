@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:proyecto_bases_final_consuelo/app/modules/home/controllers/home_controller.dart';
+import 'package:proyecto_bases_final_consuelo/app/modules/see_debtors/controllers/see_debtors_controller.dart';
 import 'package:proyecto_bases_final_consuelo/app/utils/utils.dart';
 import 'package:proyecto_bases_final_consuelo/app/widgets/widgets.dart';
 
-class HomeView extends GetView<HomeController> {
-  const HomeView({super.key});
-
+class SeeDebtorsView extends GetView<SeeDebtorsController> {
+  const SeeDebtorsView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return AdaptiveScrollbarCustom(
@@ -24,7 +23,7 @@ class HomeView extends GetView<HomeController> {
                     children: const [
                       TopBarContents(),
                       SizedBox(height: 30),
-                      Text('Ver residentes')
+                      Text('Ver deudores')
                     ],
                   ),
           ),

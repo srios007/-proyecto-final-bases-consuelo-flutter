@@ -9,6 +9,11 @@ dependencies:
   cupertino_icons: ^1.0.2
   get: 4.6.5
   http: ^0.13.5
+  google_fonts: ^3.0.1
+  adaptive_scrollbar: ^2.1.2
+  intl: ^0.17.0
+
+
   flutter: 
     sdk: flutter
 
@@ -19,4 +24,6 @@ dev_dependencies:
 
 flutter: 
   uses-material-design: true
-
+  assets:
+  - assets/icons/
+  - assets/images/

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class HomeController extends GetxController {
+class RegisterResidentController extends GetxController {
   final ScrollController horizontalScroll = ScrollController();
   final ScrollController verticalScroll = ScrollController();
 
@@ -11,3 +11,4 @@ class HomeController extends GetxController {
     super.onInit();
   }
 }
+
