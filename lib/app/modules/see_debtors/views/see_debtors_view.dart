@@ -18,14 +18,7 @@ class SeeDebtorsView extends GetView<SeeDebtorsController> {
           child: Obx(
             () => controller.isLoading.value
                 ? const IsLoading()
-                : Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      TopBarContents(),
-                      SizedBox(height: 30),
-                      Text('Ver deudores')
-                    ],
-                  ),
+                : const ComingSoon(),
           ),
         ),
       ),

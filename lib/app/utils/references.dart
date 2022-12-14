@@ -8,6 +8,7 @@ class ImageReferences {
   String four = 'assets/images/4.png';
   String five = 'assets/images/5.png';
   String loginBg = 'assets/images/login_bg.jpeg';
+  String comingSoon = 'assets/images/coming_soon.png';
 }
 
 ImageReferences imageReferences = ImageReferences();

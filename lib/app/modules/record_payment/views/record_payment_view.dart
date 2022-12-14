@@ -18,15 +18,7 @@ class RecordPaymentView extends GetView<RecordPaymentController> {
           child: Obx(
             () => controller.isLoading.value
                 ? const IsLoading()
-                : Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      TopBarContents(),
-                      SizedBox(height: 30),
-                      Text('Registrar pagos')
-
-                    ],
-                  ),
+                : const ComingSoon()
           ),
         ),
       ),
