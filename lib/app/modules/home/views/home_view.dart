@@ -55,13 +55,13 @@ class HomeView extends GetView<HomeController> {
                       ),
                       const Divider(),
                       SizedBox(
-                        height: 101.0 * controller.residentsList.length,
+                        height: 101.0 *  controller.residentsList!.rows!.length,
                         width: Get.width,
                         child: ListView.builder(
-                          itemCount: controller.residentsList.length,
+                          itemCount: controller.residentsList!.rows!.length,
                           itemBuilder: (context, index) {
                             return ResidentListTitle(
-                              resident: controller.residentsList[index],
+                              resident:  controller.residentsList!.rows![0],
                             );
                           },
                           shrinkWrap: true,
@@ -78,19 +78,25 @@ class HomeView extends GetView<HomeController> {
 
 class ResidentListTitle extends StatelessWidget {
   const ResidentListTitle({super.key, required this.resident});
-  final Resident resident;
+  final List<String> resident;
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Row(
           children: [
-            ResidentListTitleItem(text: resident.codBloque!),
-            ResidentListTitleItem(text: '${resident.codApartamento!}'),
-            ResidentListTitleItem(text: resident.tipoIdentificacion!),
-            ResidentListTitleItem(text: resident.identificacionPersona!),
-            ResidentListTitleItem(text: resident.nombreCompleto!),
-            ResidentListTitleItem(text: resident.generoPersona!),
+            // Boque
+            ResidentListTitleItem(text: resident[5]),
+            // Apartamento
+            ResidentListTitleItem(text: resident[4]),
+            // Tipo id
+            ResidentListTitleItem(text: resident[1]),
+            // Id
+            ResidentListTitleItem(text: resident[0]),
+            // Nombre
+            ResidentListTitleItem(text: resident[2]),
+            // Género
+            ResidentListTitleItem(text: resident[3]),
           ],
         ),
         const Divider()

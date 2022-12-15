@@ -5,20 +5,17 @@ import 'package:proyecto_bases_final_consuelo/app/models/models.dart';
 class HomeController extends GetxController {
   final ScrollController horizontalScroll = ScrollController();
   final ScrollController verticalScroll = ScrollController();
-  List<Resident> residentsList = [
-    Resident(
-      identificacionPersona: '123',
-      tipoIdentificacion: 'CC',
-      nombreCompleto: 'Santiago Rios Valero',
-      generoPersona: 'Masculino',
-      codApartamento: 401,
-      codBloque: '12',
-    ),
-  ];
-
+  List<Metadatum>? metadata;
+  List<List<String>>? rows;
+  Resident? residentsList = Resident();
   RxBool isLoading = false.obs;
   @override
   void onInit() {
+    rows = [
+      ['1010010101', 'CC', 'Christian Caro Vargas', 'Hombre', '402', '11']
+    ];
+    residentsList!.metadata = metadata;
+    residentsList!.rows = rows;
     super.onInit();
   }
 }

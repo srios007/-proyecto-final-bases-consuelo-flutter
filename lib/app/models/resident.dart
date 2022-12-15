@@ -1,36 +1,45 @@
+// To parse this JSON data, do
+//
+//     final resident = residentFromJson(jsonString);
+
+import 'dart:convert';
+
+Resident residentFromJson(String str) => Resident.fromJson(json.decode(str));
+
+String residentToJson(Resident data) => json.encode(data.toJson());
+
 class Resident {
-  Resident({
-    this.identificacionPersona,
-    this.tipoIdentificacion,
-    this.nombreCompleto,
-    this.generoPersona,
-    this.codApartamento,
-    this.codBloque,
-  });
 
-  Resident.fromJson(Map<String, dynamic> json) {
-    identificacionPersona = json['IDENTIFICACION_PERSONA'];
-    tipoIdentificacion = json['TIPO_IDENTIFICACION'];
-    nombreCompleto = json['NOMBRE_COMPLETO'];
-    generoPersona = json['GENERO_PERSONA'];
-    codApartamento = json['COD_APARTAMENTO'];
-    codBloque = json['COD_BLOQUE'];
-  }
-  String? identificacionPersona;
-  String? tipoIdentificacion;
-  String? nombreCompleto;
-  String? generoPersona;
-  int? codApartamento;
-  String? codBloque;
+    factory Resident.fromJson(Map<String, dynamic> json) => Resident(
+        metadata: List<Metadatum>.from(json['metadata'].map((x) => Metadatum.fromJson(x))),
+        rows: List<List<String>>.from(json['rows'].map((x) => List<String>.from(x.map((x) => x)))),
+    );
+    Resident({
+        this.metadata,
+        this.rows,
+    });
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['IDENTIFICACION_PERSONA'] = identificacionPersona;
-    data['TIPO_IDENTIFICACION'] = tipoIdentificacion;
-    data['NOMBRE_COMPLETO'] = nombreCompleto;
-    data['GENERO_PERSONA'] = generoPersona;
-    data['COD_APARTAMENTO'] = codApartamento;
-    data['COD_BLOQUE'] = codBloque;
-    return data;
-  }
+    List<Metadatum>? metadata;
+    List<List<String>>? rows;
+
+    Map<String, dynamic> toJson() => {
+        'metadata': List<dynamic>.from(metadata!.map((x) => x.toJson())),
+        'rows': List<dynamic>.from(rows!.map((x) => List<dynamic>.from(x.map((x) => x)))),
+    };
+}
+
+class Metadatum {
+
+    factory Metadatum.fromJson(Map<String, dynamic> json) => Metadatum(
+        name: json['name'],
+    );
+    Metadatum({
+        this.name,
+    });
+
+    String? name;
+
+    Map<String, dynamic> toJson() => {
+        'name': name,
+    };
 }
