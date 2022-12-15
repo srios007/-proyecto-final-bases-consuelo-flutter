@@ -1,0 +1,1 @@
+export 'oracle_services/get_residents.dart';
