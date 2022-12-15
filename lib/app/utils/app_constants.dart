@@ -3,15 +3,8 @@
 ///
 
 class AppConstants {
-  // final numberFormat = NumberFormat.currency(symbol: '\$', decimalDigits: 0);
-  final List<String> typeId = [
-    'CC',
-    'CE',
-  ];
-   final List<String> genders = [
-    'F',
-    'M',
-  ];
+  final List<String> typeId = ['CC', 'CE', 'TI', 'PAP'];
+  final List<String> genders = ['Hombre', 'Mujer', 'Otro'];
 }
 
 AppConstants constants = AppConstants();

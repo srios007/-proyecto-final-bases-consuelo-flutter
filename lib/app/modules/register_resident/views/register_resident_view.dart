@@ -46,6 +46,9 @@ class RegisterResidentView extends GetView<RegisterResidentController> {
                         FormsInput(
                           hintText: 'Segundo nombre',
                           controller: controller.secondNameController,
+                          validator: (String? _) {
+                            return null;
+                          },
                         ),
                         const SizedBox(height: 30),
                         FormsInput(
@@ -56,6 +59,9 @@ class RegisterResidentView extends GetView<RegisterResidentController> {
                         FormsInput(
                           hintText: 'Segundo apellido',
                           controller: controller.secondLastNameController,
+                          validator: (String? _) {
+                            return null;
+                          },
                         ),
                         const SizedBox(height: 30),
                         TypeIdSelector(

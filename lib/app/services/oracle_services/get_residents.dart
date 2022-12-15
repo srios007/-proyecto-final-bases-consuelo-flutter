@@ -6,14 +6,11 @@ class GetResidentsService {
   Future<Resident?> getResident() async {
     try {
       print('Get Residents service');
-      final headers = {
-        'x-token': '',
-        'system': '',
-      };
+  
       const url = '';
       print('Voy a hacer la petición');
       final response =
-          await http.get(Uri.parse(url), headers: headers).catchError((e) {
+          await http.get(Uri.parse(url)).catchError((e) {
         print('ERROR: $e');
       });
       print('Hice la petición');

@@ -19,7 +19,7 @@ class RegisterResidentController extends GetxController {
   final key = GlobalKey<FormState>();
   RxString howFindUs = 'CC'.obs;
   RxBool isOwner = false.obs;
-  RxString gender = 'F'.obs;
+  RxString gender = 'Hombre'.obs;
 
   /// Cambia si es propietario o no
   onChangedIsOwner() {

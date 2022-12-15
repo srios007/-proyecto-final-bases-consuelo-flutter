@@ -12,6 +12,7 @@ class FormsInput extends StatelessWidget {
     this.border,
     this.textStyle,
     this.width,
+    this.validator,
   }) : super(key: key);
 
   String hintText;
@@ -20,6 +21,7 @@ class FormsInput extends StatelessWidget {
   InputBorder? border;
   TextStyle? textStyle;
   double? width;
+  String? Function(String?)? validator;
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +58,7 @@ class FormsInput extends StatelessWidget {
               focusedErrorBorder: styles.noBorderTextField,
             ),
             controller: controller,
-            validator: (String? _) {
+            validator:validator ?? (String? _) {
               if (controller.text.isEmpty) {
                 return 'Por favor, rellena este campo';
               } else {
